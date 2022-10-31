@@ -1,0 +1,30 @@
+@use "variable";
+@use "main";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: variable.$font;
+  background-image: url(../image/pattern-curve.svg);
+  background-repeat: no-repeat;
+  background-size: 18rem;
+  background-position: left bottom;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    background-size: 30rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    background-size: 50rem;
+  }
+}

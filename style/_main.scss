@@ -1,0 +1,254 @@
+@use "variable";
+
+main {
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  animation: 1s ease-in 0s 1 slideInLeft;
+
+  .testimony-container {
+    width: 100%;
+    padding: 0.5rem;
+    background-image: url(../image/pattern-bg.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    .image {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: auto;
+
+      .profile {
+        border-radius: 0.5rem;
+        width: 90%;
+
+        -webkit-box-shadow: 3px 6px 31px 12px rgba(0, 0, 0, 0.3);
+        box-shadow: 3px 6px 31px 12px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    .button {
+      display: flex;
+      justify-content: space-between;
+      margin-top: -1rem;
+      background: #fff;
+      width: 5rem;
+      padding: 0.8rem;
+      border-radius: 5rem;
+      -webkit-box-shadow: 12px 15px 15px -3px rgba(0, 0, 0, 0.3);
+      box-shadow: 12px 15px 15px -3px rgba(0, 0, 0, 0.3);
+
+      button {
+        cursor: pointer;
+        background: none;
+        outline: none;
+        border: none;
+
+        img {
+          width: 80%;
+        }
+      }
+      #next:focus > .profile {
+        opacity: 0;
+      }
+    }
+  }
+
+  .testimony {
+    background-image: url(../image/pattern-quotes.svg);
+    background-repeat: no-repeat;
+    background-size: 4rem;
+    background-position: top center;
+    padding-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    flex-direction: center;
+    align-items: center;
+
+    text-align: center;
+
+    h1 {
+      font-size: 1rem;
+      font-weight: 300;
+      color: variable.$darkblue;
+      letter-spacing: 0.5px;
+      line-height: 1.4rem;
+    }
+
+    .name-container {
+      line-height: 1.3rem;
+      h2 {
+        font-size: 1rem;
+      }
+      p {
+        letter-spacing: 0.5px;
+        color: variable.$grayishblue;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    padding: 4rem;
+    .testimony-container {
+      .image {
+        .profile {
+          width: 70%;
+        }
+      }
+    }
+
+    .testimony {
+      margin-top: 2rem;
+
+      h1 {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+
+      .name-container {
+        line-height: 1.5rem;
+        h2 {
+          font-size: 1.3rem;
+        }
+        p {
+          letter-spacing: 1px;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 5rem;
+
+    .testimony-container {
+      .image {
+        margin-left: -3rem;
+        z-index: 1;
+        width: 100%;
+
+        .profile {
+          border-radius: 0.5rem;
+          width: 23rem;
+        }
+      }
+    }
+
+    .testimony {
+      background-size: 5rem;
+      background-position: 5rem 0;
+      padding-top: 1rem;
+      display: flex;
+      gap: 1rem;
+      flex-direction: column;
+
+      text-align: left;
+
+      h1 {
+        font-size: 1.3rem;
+        font-weight: 300;
+        color: variable.$darkblue;
+        letter-spacing: 1px;
+        line-height: 1.7rem;
+      }
+
+      .name-container {
+        display: flex;
+        gap: 1rem;
+        width: 100%;
+        text-align: left;
+        line-height: 1.3rem;
+        h2 {
+          font-size: 1rem;
+        }
+        p {
+          letter-spacing: 0.5px;
+          color: variable.$grayishblue;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  main {
+    flex-direction: row-reverse;
+    padding: 10rem;
+    gap: 0;
+    .testimony-container {
+      background-position: center;
+      .image {
+        display: flex;
+
+        width: 35rem;
+
+        .profile {
+          border-radius: 0.5rem;
+          width: 85%;
+        }
+      }
+
+      .button {
+        margin-top: -1rem;
+        margin-left: -15rem;
+        width: 6rem;
+        padding: 1rem;
+      }
+    }
+
+    .testimony {
+      margin-right: -5rem;
+      margin-top: -10rem;
+      background-size: 8rem;
+      background-position: 5rem 0;
+      padding-top: 3rem;
+      gap: 2rem;
+      text-align: left;
+
+      h1 {
+        width: 100%;
+        font-size: 32px;
+        letter-spacing: 0.5px;
+        line-height: 2.5rem;
+      }
+
+      .name-container {
+        line-height: 1.3rem;
+        h2 {
+          font-size: 1.5rem;
+        }
+        p {
+          letter-spacing: 0.5px;
+          color: variable.$grayishblue;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
